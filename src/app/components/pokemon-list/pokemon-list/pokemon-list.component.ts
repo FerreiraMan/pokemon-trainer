@@ -14,7 +14,8 @@ export class PokemonListComponent implements OnInit {
   currentPage = 0;
   pageSize = 10;
 
-  @Input() pokemon?: Pokemon;
+  //@Input() pokemon?: Pokemon;
+  @Input() pokemons1: Pokemon[] = [];
 
   constructor(
     private pokemonService: PokemonService,

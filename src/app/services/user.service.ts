@@ -25,13 +25,27 @@ export class UserService {
     this._user = undefined;
   }
 
-  /////////////////////////////////////////////////
   public inCaptured(pokemonName: string) : boolean {
+    //console.log("inCaptured: ", pokemonName); // add this line
     if (this._user) {
-      return Boolean(this.user?.favouritesPokemon.find((pokemon: Pokemon) => pokemon.name === pokemonName))
+      //console.log("this.user: ", this.user); // add this line
+      return Boolean(
+        this.user?.favouritesPokemon.find(
+          (pokemon: Pokemon) => pokemon.name === pokemonName));
     }
     return false;
   }
-}
 
+  public addToCaptured(pokemon: Pokemon): void {
+    if (this._user) {
+      this._user.favouritesPokemon.push(pokemon);
+    }
+  }
+
+  public removerFromCaptured(pokemonName: string): void {
+    if (this._user){
+      this._user.favouritesPokemon = this._user.favouritesPokemon.filter((pokemon: Pokemon) => pokemon.name !== pokemonName);
+  }
+}
+}
 

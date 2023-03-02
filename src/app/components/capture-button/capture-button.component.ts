@@ -12,12 +12,11 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class CaptureButtonComponent implements OnInit{
 
+  public loading: boolean = false;
+  public isCaptured: boolean = false;
+
   @Input() pokemon: any; // pass the pokemon object as input
   @Input() pokemonName: string = "";
-
-  get loading(): boolean {
-    return this.capturedService.loading;
-  }  
 
   constructor(
     private readonly userService: UserService,
@@ -26,15 +25,16 @@ export class CaptureButtonComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
+    this.isCaptured = this.userService.inCaptured(this.pokemonName);
   }
 
   onCaptureClick(): void {
-    // add pokemons to captured
-    //alert("clicked a captured: " + this.pokemonName);
+    this.loading = true;
     this.capturedService.addToCaptured(this.pokemonName)
       .subscribe({
         next: (response: User) => {
-          console.log("NEXT", response)
+          this.loading = false;
+          this.isCaptured = this.userService.inCaptured(this.pokemonName);
         },
         error: (error: HttpErrorResponse) => {
           console.log("Error", error.message)
