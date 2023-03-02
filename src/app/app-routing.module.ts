@@ -5,6 +5,7 @@ import { GuitarCataloguePage } from "./pages/guitar-catalogue/guitar-catalogue.p
 import { LoginPage } from "./pages/login/login.page";
 import { ProfilePage } from "./pages/profile/profile.page";
 import { PokemonListComponent } from "./components/pokemon-list/pokemon-list/pokemon-list.component";
+import { CollectionComponent } from "./pages/collection/collection.component";
 
 const routes: Routes = [
     {
@@ -29,6 +30,11 @@ const routes: Routes = [
     {
         path: 'pokemons', 
         component: PokemonListComponent, 
+        canActivate: [AuthGuard]
+    },
+    {
+        path: 'collection', 
+        component: CollectionComponent, 
         canActivate: [AuthGuard]
     }
 ]

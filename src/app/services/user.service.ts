@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { StorageKeys } from '../enums/storage-keys.enum';
-import { Guitar } from '../models/guitar.model';
 import { User } from '../models/user.model';
 import { StorageUtil } from '../utils/storage.util';
 import { Pokemon } from '../models/pokemon.model';
@@ -21,27 +20,18 @@ export class UserService {
   constructor() {
     this._user =  StorageUtil.storageRead<User>(StorageKeys.User);
   }
-  public inFavourites(guitarId: string): boolean {
-    if (this._user) {
-      return Boolean(this.user?.favourites.find((guitar: Guitar) => guitar.id === guitarId));
-    }
-    return false;
-  }
-  public addToFavourites(guitar : Guitar): void {
-    if (this._user) {
-      this._user.favourites.push(guitar);
-    }
-  }
-  public removeFromFavourites(guitarId: string): void {
-    if (this._user) {
-      this._user.favourites = this._user.favourites.filter((guitar: Guitar) => guitar.id !== guitarId);
-    }
-  }
   public logout(): void {
     StorageUtil.storageSave(StorageKeys.User, undefined);
     this._user = undefined;
   }
-}
 
+  /////////////////////////////////////////////////
+  public inCaptured(pokemonName: string) : boolean {
+    if (this._user) {
+      return Boolean(this.user?.favouritesPokemon.find((pokemon: Pokemon) => pokemon.name === pokemonName))
+    }
+    return false;
+  }
+}
 
 

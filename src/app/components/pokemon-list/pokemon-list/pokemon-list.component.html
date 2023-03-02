@@ -1,7 +1,7 @@
   
   
 <div *ngFor="let pokemon of displayedPokemons" class="bg-white mb-4 shadow rounded items-center flex flex-col justify-center max-w-screen-md mx-auto relative">
-  <app-favourite-button [pokemon]="pokemon"></app-favourite-button>
+  <app-capture-button [pokemonName]="pokemon.name"></app-capture-button>
   <h3 class="text-center">{{ pokemon.name }}</h3>
   <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.url.split('/')[6] + '.png'" alt="" class="mx-auto">
 </div>

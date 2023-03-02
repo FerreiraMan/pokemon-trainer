@@ -15,6 +15,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FavouriteButtonComponent } from './components/favourite-button/favourite-button.component';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list/pokemon-list.component';
 import { CommonModule } from '@angular/common';
+import { CollectionComponent } from './pages/collection/collection.component';
+import { CaptureButtonComponent } from './components/capture-button/capture-button.component';
 
 //Decorator
 @NgModule({
@@ -28,7 +30,10 @@ import { CommonModule } from '@angular/common';
     GuitarListItemComponent,
     NavbarComponent,
     FavouriteButtonComponent,
-    PokemonListComponent
+    CollectionComponent,
+    PokemonListComponent,
+    CollectionComponent,
+    CaptureButtonComponent
   ],
   imports: [  // MODULES
     BrowserModule,
