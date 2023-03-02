@@ -2,7 +2,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 import { CapturedService } from 'src/app/services/captured.service';
-import { PokemonService } from 'src/app/services/pokemon-catalogue.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -20,7 +19,6 @@ export class CaptureButtonComponent implements OnInit{
 
   constructor(
     private readonly userService: UserService,
-    private readonly pokemonService: PokemonService,
     private readonly capturedService: CapturedService,
   ) { }
 
@@ -29,12 +27,15 @@ export class CaptureButtonComponent implements OnInit{
   }
 
   onCaptureClick(): void {
+
     this.loading = true;
     this.capturedService.addToCaptured(this.pokemonName)
+
       .subscribe({
         next: (response: User) => {
           this.loading = false;
           this.isCaptured = this.userService.inCaptured(this.pokemonName);
+          console.log("NEXT", response )
         },
         error: (error: HttpErrorResponse) => {
           console.log("Error", error.message)

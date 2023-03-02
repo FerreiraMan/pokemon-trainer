@@ -1,7 +1,5 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
-import { FavouriteService } from 'src/app/services/favourite.service';
 import { PokemonService } from 'src/app/services/pokemon-catalogue.service';
 
 @Component({
@@ -14,12 +12,11 @@ export class PokemonListComponent implements OnInit {
   currentPage = 0;
   pageSize = 10;
 
-  //@Input() pokemon?: Pokemon;
-  @Input() pokemons1: Pokemon[] = [];
+  @Input() pokemon?: Pokemon;
+  @Input() pokemonsArray: Pokemon[] = [];
 
   constructor(
-    private pokemonService: PokemonService,
-    private favouriteService: FavouriteService) {} //lalallala
+    private pokemonService: PokemonService,) {}
     
 
   ngOnInit(): void {
