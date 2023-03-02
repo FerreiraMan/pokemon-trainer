@@ -1,0 +1,23 @@
+<aside class="absolute top-4 right-4">
+    <button 
+        (click)="onFavouriteClick()"
+        class="border border-slate-200 rounded flex justify-center items-center p-2 text-pink-600">
+
+        <ng-container *ngIf="!loading; else spinner">
+            <ng-container *ngIf="isFavourite; then favourite else notFavourite" class="material-icons">
+                
+            </ng-container>
+            <ng-template #favourite>
+                <span class="material-icons filter grayscale">catching_pokemon</span>
+            </ng-template>
+            <ng-template #notFavourite>
+                <span class="material-icons">catching_pokemon</span>
+            </ng-template>
+        </ng-container>
+
+        <ng-template #spinner>
+            <span class="material-icons animate-spin">catching_pokemon</span>
+        </ng-template>
+
+    </button>
+</aside>
