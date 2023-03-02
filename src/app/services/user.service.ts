@@ -47,5 +47,12 @@ export class UserService {
       this._user.favouritesPokemon = this._user.favouritesPokemon.filter((pokemon: Pokemon) => pokemon.name !== pokemonName);
   }
 }
+
+public getCapturedPokemon(): Pokemon[] {
+  if (this._user) {
+    return this._user.favouritesPokemon;
+  }
+  return [];
+}
 }
 

@@ -1,10 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Observable, tap } from 'rxjs';
 import { Pokemon } from '../models/pokemon.model';
 import { User } from '../models/user.model';
-import { PokemonCataloguePage } from '../pages/pokemon-catalogue/pokemon-catalogue.component';
 import { PokemonService } from './pokemon-catalogue.service';
 import { UserService } from './user.service';
 
@@ -15,6 +14,8 @@ const { apiKey, apiUsers } = environment;
 })
 export class CapturedService {
 
+  @Input() capturedPokemon: Pokemon[] = [];
+
   constructor(
     private http: HttpClient,
     private readonly pokemonService: PokemonService,
@@ -24,7 +25,6 @@ export class CapturedService {
   public addToCaptured(name: string): Observable<User> {
 
     console.log("addToCaptured: ", name); /////////
-
 
     if (!this.userService.user) {
       throw new Error("addToCaptured: There is no user")
@@ -59,6 +59,7 @@ export class CapturedService {
     .pipe(
       tap((updatedUser: User) => {
         this.userService.user = updatedUser;
+        this.capturedPokemon = this.userService.getCapturedPokemon();
       })
     )
     }

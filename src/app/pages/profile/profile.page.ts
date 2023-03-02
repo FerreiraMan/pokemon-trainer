@@ -14,17 +14,6 @@ export class ProfilePage {
     return this.userService.user;
   }
 
-  /*
-  get favourites(): Guitar[] {
-
-    if (this.userService.user) {
-      return this.userService.user.favourites
-    }
-
-    return [];
-  }
-  */
-
   constructor(
     private userService: UserService
   ) { }

@@ -15,12 +15,14 @@ export class CollectionComponent implements OnInit{
   }
 
   get captureds(): Pokemon[] {
-
     if (this.userService.user) {
       return this.userService.user.favouritesPokemon;
     }
-    
     return [];
+  }
+
+  get captureds1(): Pokemon[] {
+    return this.userService.getCapturedPokemon();
   }
 
   constructor (
@@ -28,7 +30,6 @@ export class CollectionComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
 }
