@@ -27,7 +27,7 @@ export class FavouriteService {
 
   // Path request with the userId and the guitar
 
-
+  /*
   public addToFavourites(guitarId: string): Observable<User> {
 
     if (!this.userService.user) {
@@ -41,11 +41,13 @@ export class FavouriteService {
       throw new Error("addToFavourites: No guitar with id:" + guitarId);
     }
 
+    /*
     if (this.userService.inFavourites(guitarId)) {
       this.userService.removeFromFavourites(guitarId);
     } else {
       this.userService.addToFavourites(guitar);
     }
+    
 
     const headers = new HttpHeaders({
       'content-type' : 'application/json',
@@ -63,4 +65,6 @@ export class FavouriteService {
       })
     )
   }
+  */
+
 }

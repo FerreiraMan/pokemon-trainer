@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { FavouriteService } from 'src/app/services/favourite.service';
 import { PokemonService } from 'src/app/services/pokemon-catalogue.service';
@@ -13,6 +13,8 @@ export class PokemonListComponent implements OnInit {
   pokemons: any[] = [];
   currentPage = 0;
   pageSize = 10;
+
+  @Input() pokemon?: Pokemon;
 
   constructor(
     private pokemonService: PokemonService,

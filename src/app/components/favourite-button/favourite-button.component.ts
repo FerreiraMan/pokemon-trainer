@@ -26,9 +26,10 @@ export class FavouriteButtonComponent implements OnInit{
 
   ngOnInit(): void {
     // Inputs are resolved
-    this.isFavourite = this.userService.inFavourites(this.pokemon.id);
+    //this.isFavourite = this.userService.inFavourites(this.pokemon.id);
   }
 
+  /*
   onFavouriteClick(): void {
     this.loading = true;
   
@@ -46,5 +47,6 @@ export class FavouriteButtonComponent implements OnInit{
         }
       })
     });
-  }  
+  }
+  */  
 }

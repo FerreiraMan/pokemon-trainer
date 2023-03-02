@@ -14,6 +14,7 @@ export class ProfilePage {
     return this.userService.user;
   }
 
+  /*
   get favourites(): Guitar[] {
 
     if (this.userService.user) {
@@ -22,6 +23,7 @@ export class ProfilePage {
 
     return [];
   }
+  */
 
   constructor(
     private userService: UserService
