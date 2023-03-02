@@ -34,7 +34,7 @@ export class LoginService {
     //user
     const user = {
       username,
-      favourites: []
+      favouritesPokemon: []
     };
     //headers -> API Key
     const headers = new HttpHeaders({

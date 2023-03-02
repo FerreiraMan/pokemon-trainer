@@ -1,7 +1,21 @@
-<aside class="absolute top-4 right-4">
+<aside class="absolute top-4 right-4 text-pink-600">
     <button
         (click)="onCaptureClick()" 
         class="felx justify-center items-center p-2">
-        <span class="material-icons">catching_pokemon</span> 
+
+        <ng-container *ngIf="!loading; else spinner">
+            <span *ngIf="isCaptured; then captured else notCaptured" class="material-icons"></span>
+            <ng-template #captured>
+                <span class="material-icons filter grayscale">catching_pokemon</span>
+            </ng-template>
+            <ng-template #notCaptured>
+                <span class="material-icons">catching_pokemon</span>
+            </ng-template>
+        </ng-container>
+
+        <ng-template #spinner>
+            <span class="material-icons animate-spin">catching_pokemon</span>
+        </ng-template>
+
     </button>
 </aside>
