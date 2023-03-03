@@ -1,13 +1,29 @@
-<form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
-    <fieldset class="mb-3">
-        <label for="username" class="block">Username:</label>
-        <input type="text" 
-            ngModel
-            #username="ngModel"
-            name="username" id="username" 
-            class="border border-slate-300 p-2 rounded w-full" 
-            placeholder="johndoe" />
-    </fieldset>
-
-    <button type="submit" class="bg-yellow-500 p-2 rounded">Login</button>
+<form
+  #loginForm="ngForm"
+  (ngSubmit)="loginSubmit(loginForm)"
+  class="flex flex-col items-center justify-center h-screen bg-cover login-bg"
+>
+  <div class="login-container">
+    <div class="login-form">
+      <fieldset class="mb-3">
+        <!--<label for="username" class="block text-white">Username:</label>-->
+        <input
+          type="text"
+          ngModel
+          #username="ngModel"
+          name="username"
+          id="username"
+          class="border border-slate-300 p-2 rounded w-full"
+          placeholder="pokemon-trainer"
+        />
+      </fieldset>
+      <button type="submit" class="login-button">
+        <img
+          src="https://www.pinclipart.com/picdir/big/65-653101_pokemon-pokmon-pokeball-pokball-pokemon-go-pokem-pokeball.png"
+          alt="Pokeball"
+          class="w-8 h-8 pokeball"
+        />
+      </button>
+    </div>
+  </div>
 </form>

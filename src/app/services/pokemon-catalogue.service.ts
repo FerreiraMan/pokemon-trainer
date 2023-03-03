@@ -27,7 +27,8 @@ export class PokemonService {
     return this._loading;
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient) {}
 
   getPokemons(): Observable<any> {
     const cachedData = sessionStorage.getItem(this.CACHE_KEY);

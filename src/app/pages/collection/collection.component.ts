@@ -14,12 +14,14 @@ export class CollectionComponent implements OnInit{
     return this.userService.user;
   }
 
+  /*
   get captureds(): Pokemon[] {
     if (this.userService.user) {
       return this.userService.user.favouritesPokemon;
     }
     return [];
   }
+  */
 
   get captureds1(): Pokemon[] {
     return this.userService.getCapturedPokemon();
@@ -30,5 +32,11 @@ export class CollectionComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
+  }
+
+  releasePokemon(pokemon: Pokemon) {
+    if (this.userService.user) {
+      this.userService.removerFromCaptured(pokemon.name);
+    }
   }
 }
