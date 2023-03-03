@@ -1,3 +1,13 @@
+//#region 
+/*
+This is a TypeScript code for an Angular application that defines the routes of the application. 
+It imports the necessary modules and components, and defines an array of routes that map to their respective components. 
+It also defines an NgModule called AppRoutingModule that imports RouterModule and exports it. 
+This module is used to configure and register the routes with the router module, and is then exported to be used in the root module of the application. 
+The AuthGuard is used to determine whether or not the user is authorized to access certain routes.
+*/
+//#endregion
+
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "./guards/auth.guard";

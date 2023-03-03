@@ -1,3 +1,13 @@
+//#region 
+/*
+This is an Angular component that displays a list of Pokemons. 
+It retrieves the list from an API using the PokemonService, and allows the user to navigate through the list using the onNextPage() and onPreviousPage() methods. 
+The pageSize property determines the number of Pokemons displayed on each page. 
+The component also calculates the total number of pages required to display all the Pokemons. 
+The Pokemon model is used to define the type of the pokemon and pokemonsArray input properties.
+*/
+//#endregion
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { PokemonService } from 'src/app/services/pokemon-catalogue.service';
@@ -50,11 +60,4 @@ export class PokemonListComponent implements OnInit {
   get totalPages() {
     return Math.ceil(this.pokemons.length / this.pageSize);
   }
-
-  public GetUrl(pokemonUrl : string){
-    const urlArray = pokemonUrl.split("/");
-    const id = urlArray[urlArray.length-1];
-    console.log("id é este" + id);
-    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}`;
- }
  }

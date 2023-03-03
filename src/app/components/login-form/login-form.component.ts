@@ -1,3 +1,21 @@
+//#region 
+/*
+This is a TypeScript file for an Angular component called LoginFormComponent that handles user interactions for a login form in an Angular application.
+
+It imports dependencies such as Component, EventEmitter, Output, Renderer2, NgForm, User, LoginService, and UserService.
+
+It defines the metadata for the component using the @Component decorator, including the HTML tag name, the HTML template, and CSS styles.
+
+The component has a property called login which emits an event when the user logs in, and it tracks whether the user has clicked the login button.
+
+The loginSubmit method is called when the user submits the login form. It extracts the username from the form and passes it to the loginService to perform a login action. If the login is successful, the logged-in user's information is saved, and the login event is emitted.
+
+The setBackgroundImage method sets the background image of the document body.
+
+The ngOnInit lifecycle hook calls the setBackgroundImage method.
+*/
+//#endregion
+
 import { Component, EventEmitter, Output, Renderer2 } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user.model';

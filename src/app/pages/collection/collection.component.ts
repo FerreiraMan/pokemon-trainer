@@ -1,3 +1,11 @@
+//#region 
+/*
+This is an Angular component that displays a list of captured Pokemon by the current user and allows the user to release them. 
+It imports the necessary modules and services, defines getter methods to fetch the user and captured Pokemon, and a method to release a captured Pokemon. 
+The component is initialized using a lifecycle hook.
+*/
+//#endregion
+
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { User } from 'src/app/models/user.model';
@@ -14,16 +22,7 @@ export class CollectionComponent implements OnInit{
     return this.userService.user;
   }
 
-  /*
   get captureds(): Pokemon[] {
-    if (this.userService.user) {
-      return this.userService.user.favouritesPokemon;
-    }
-    return [];
-  }
-  */
-
-  get captureds1(): Pokemon[] {
     return this.userService.getCapturedPokemon();
   }
 
