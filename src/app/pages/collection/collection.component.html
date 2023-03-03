@@ -3,10 +3,16 @@
 </header>
 <main class="container mx-auto p-4">
     <h4 class="text-xl text-white">Your collected pokemons:</h4>
-    
-    <div *ngFor="let pokemon of captureds1">
-        <p>{{ pokemon.name }}</p>
-        <img [src]="pokemon.imageUrl" alt="Pokemon Image">
+    <div *ngFor="let pokemon of captureds1" class="mb-4">
+        <div class="bg-green-400 p-4 rounded-md relative">
+            <p class="text-gray-800">{{ pokemon.name }}</p>
+            <aside class="material-icons absolute top-0 right-0 text-red-500">catching_pokemon</aside> 
+            <div class="flex justify-center items-center">
+                <div (click)="releasePokemon(pokemon)" class="bg-blue-400 p-2 rounded-md flex items-center cursor-pointer">
+                  <p class="text-white mr-2">Release!</p>
+                  <img alt="My image name" src="./assets/openPokeball.png" class="w-4 h-4">
+                </div>
+              </div>
+        </div>
     </div>
-
 </main>
