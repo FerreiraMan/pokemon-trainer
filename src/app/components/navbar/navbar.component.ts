@@ -1,3 +1,11 @@
+//#region 
+/*
+This is an Angular component for a navigation bar that has a User object retrieved from a UserService using a getter. 
+It also has a logout() method that calls the logout() method from the UserService and navigates to the /login page using the Router. 
+The component is defined using the @Component decorator and injected with dependencies using the constructor method.
+*/
+//#endregion
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';

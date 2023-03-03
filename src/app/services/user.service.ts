@@ -1,3 +1,12 @@
+//#region 
+/*
+The code defines an Angular service named UserService that manages user data, including captured Pokemon lists. 
+The service stores the user information in the browser's local storage using a utility class called StorageUtil.
+The service provides methods for adding, removing, and checking if a Pokemon is in the captured Pokemon list, and getting the list of captured Pokemon for the current user.
+The @Injectable decorator is used to provide metadata that allows Angular to inject dependencies into the UserService.
+*/
+//#endregion
+
 import { Injectable } from '@angular/core';
 import { StorageKeys } from '../enums/storage-keys.enum';
 import { User } from '../models/user.model';

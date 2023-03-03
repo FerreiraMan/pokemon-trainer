@@ -1,3 +1,13 @@
+//#region 
+/*
+This code defines an Angular service called CapturedService that allows users to add or remove a Pokemon from their captured list. It uses HttpClient to communicate with a server, UserService to manage user data, and PokemonService to manage Pokemon data.
+
+The addToCaptured method checks if a user is logged in, gets the user and Pokemon objects, adds or removes the Pokemon from the user's captured list, and updates the server with the new user data. It also updates the capturedPokemon property and returns an Observable<User>.
+
+The code imports several modules, classes, and services, including HttpClient, Observable, Pokemon, and User. It also accesses environment variables through the environment object.
+*/
+//#endregion
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
 import { environment } from 'environments/environment';

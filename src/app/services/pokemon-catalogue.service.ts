@@ -1,3 +1,12 @@
+//#region 
+/*
+This is a TypeScript code for an Angular service called PokemonService that communicates with the PokeAPI to fetch data about Pokemons. 
+The class has three properties: _pokemons, _error, and _loading that hold fetched data, error messages, and a flag to indicate if data is being loaded. 
+It has three methods: getPokemons(), findPokemonById(id), and pokemonByName(name) that retrieve data about Pokemons from the PokeAPI using Angular's HttpClient service. 
+The class also has getter methods that return the values of the _pokemons, _error, and _loading properties.
+*/
+//#endregion
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
