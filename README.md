@@ -2,7 +2,7 @@
 
 The Pokemon Catalogue Application is an Angular-based web application that allows users to collect and view information about Pokemon from the PokeAPI. The app requires users to enter their Trainer name before they can interact with it.
 
-The app can be used here: 
+The app can be used here: https://assignment-6-pokemon-sage.vercel.app/
 
 
 ## Getting started
