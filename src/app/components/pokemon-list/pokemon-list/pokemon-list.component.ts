@@ -31,14 +31,6 @@ export class PokemonListComponent implements OnInit {
     return this.pokemons.slice(start, end);
   }
 
- 
-  onFavourite(pokemon: any) {
-    const id = pokemon.url.split('/')[6];
-    this.pokemonService.findPokemonById(id).subscribe((data) => {
-      pokemon.id = data.id;
-    });
-  }
-
   onNextPage() {
     if (this.hasMorePages) {
       this.currentPage++;
@@ -58,4 +50,11 @@ export class PokemonListComponent implements OnInit {
   get totalPages() {
     return Math.ceil(this.pokemons.length / this.pageSize);
   }
-}
+
+  public GetUrl(pokemonUrl : string){
+    const urlArray = pokemonUrl.split("/");
+    const id = urlArray[urlArray.length-1];
+    console.log("id é este" + id);
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}`;
+ }
+ }

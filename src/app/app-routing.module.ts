@@ -1,9 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "./guards/auth.guard";
-import { GuitarCataloguePage } from "./pages/guitar-catalogue/guitar-catalogue.page";
 import { LoginPage } from "./pages/login/login.page";
-import { ProfilePage } from "./pages/profile/profile.page";
 import { PokemonListComponent } from "./components/pokemon-list/pokemon-list/pokemon-list.component";
 import { CollectionComponent } from "./pages/collection/collection.component";
 
@@ -16,16 +14,6 @@ const routes: Routes = [
     {
         path: "login",
         component: LoginPage
-    },
-    {
-        path: "guitars",
-        component: GuitarCataloguePage,
-        canActivate: [ AuthGuard ]
-    },
-    {
-        path: "profile",
-        component: ProfilePage,
-        canActivate: [ AuthGuard ]
     },
     {
         path: 'pokemons', 

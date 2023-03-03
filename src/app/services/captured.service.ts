@@ -33,9 +33,6 @@ export class CapturedService {
     const user: User = this.userService.user;
     const pokemon: Pokemon | undefined = this.pokemonService.pokemonByName(name);
     
-    console.log("pokemon: ", pokemon); /////////
-
-
     if(!pokemon) {
       throw new Error("addToCaptured: No pokemon with name:" + name);
     }

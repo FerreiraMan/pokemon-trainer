@@ -26,10 +26,9 @@ export class CollectionComponent implements OnInit{
   }
 
   constructor (
-    private userService: UserService
+    private userService: UserService,
   ) { }
 
   ngOnInit(): void {
   }
-
 }
