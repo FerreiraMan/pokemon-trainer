@@ -1,12 +1,32 @@
-  
-  
-<div *ngFor="let pokemon of displayedPokemons" class="bg-white mb-4 shadow rounded items-center flex flex-col justify-center max-w-screen-md mx-auto relative">
-  <app-capture-button [pokemonName]="pokemon.name"></app-capture-button>
-  <h3 class="text-center">{{ pokemon.name }}</h3>
-  <img [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.url.split('/')[6] + '.png'" alt="" class="mx-auto">
+<div class="bg-image">
+  <div class="flex justify-center mt-4">
+    <button
+      class="bg-sky-900 text-orange-200 px-4 py-2 rounded hover:bg-sky-600 mr-2"
+      (click)="onPreviousPage()"
+    >
+      Previous
+    </button>
+    <button
+      class="bg-sky-900 text-orange-200 px-4 py-2 rounded hover:bg-sky-600"
+      (click)="onNextPage()"
+    >
+      Next
+    </button>
+  </div>
+  <div
+    *ngFor="let pokemon of displayedPokemons"
+    class="bg-sky-900 text-orange-200 my-2 shadow rounded items-center flex flex-col justify-center max-w-md mx-auto relative opacity-90"
+  >
+    <app-capture-button [pokemonName]="pokemon.name"></app-capture-button>
+    <h3 class="text-center">{{ pokemon.name }}</h3>
+    <img
+      [src]="
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+        pokemon.url.split('/')[6] +
+        '.png'
+      "
+      alt=""
+      class="mx-auto"
+    />
+  </div>
 </div>
-
-  
-  <button (click)="onPreviousPage()" class="text-white">Previous</button>
-  <button (click)="onNextPage()" class="text-white">Next</button>
-  

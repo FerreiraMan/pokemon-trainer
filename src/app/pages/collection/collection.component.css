@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Nabla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap");
+/* Center the content vertically and horizontally */
+.bg-image {
+  background-image: url("https://getwallpapers.com/wallpaper/full/4/f/5/114950.jpg");
+  background-size: cover;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-family: "Nabla", cursive;
+  color: #FED7AA;
+}
+/* Set the font color of the page */
+body,
+p,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #FED7AA;
+  font-family: "Gajraj One", cursive;
+}
+/* Style the header */
+header {
+  text-align: center;
+}
+/* Style the Pokedex title */
+main h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+/* Style the Pokemon cards */
+.card {
+  background-color: #E5E7EB;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.card:hover {
+  background-color: #D1D5DB;
+}
+/* Style the Pokemon name */
+.card p {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+/* Style the Pokeball icon */
+.card aside {
+  font-size: 2rem;
+  position: absolute;
+  top: -0.75rem;
+  right: -0.75rem;
+  cursor: pointer;
+}
+.card aside:hover {
+  transform: scale(1.2);
+}
+.card aside:active {
+  transform: scale(0.8);
+}
+/*when freeing the pokemon*/
+.p-2:hover {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
