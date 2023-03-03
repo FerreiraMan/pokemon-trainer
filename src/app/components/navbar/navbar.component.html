@@ -1,14 +1,20 @@
-<nav *ngIf="user !== undefined" class="bg-yellow-500 flex justify-between items-center p-4 sticky top-0 w-full z-50">
+<nav *ngIf="user !== undefined" class="flex justify-between items-center p-4 sticky top-0 w-full z-50">
     <span class="font-bold">Pokemon Trainer</span>
-    <ul class="flex">
-        <li class="px-4">
-            <a routerLink="/pokemons">Pokemons</a>
-        </li>
-        <li class="px-4">
-            <a routerLink="/collection">Collection</a>
-        </li>
-        <li class="px-4">
-            <button (click)="logout()">Logout</button>
-        </li>
+    <ul class="hidden md:flex">
+      <li class="px-4" routerLinkActive="active-link">
+        <a routerLink="/pokemons">
+          <img class="navbar-icon" src="https://cdn-icons-png.flaticon.com/512/188/188983.png" alt="Pokemons">
+        </a>
+      </li>
+      <li class="px-4" routerLinkActive="active-link">
+        <a routerLink="/collection">
+          <img class="navbar-icon" src="https://cdn-icons-png.flaticon.com/512/1752/1752783.png" alt="Collection">
+        </a>
+      </li>
+      <li class="px-4">
+        <button (click)="logout()">
+          <img class="navbar-icon" src="https://cdn-icons-png.flaticon.com/512/1752/1752813.png" alt="Logout">
+        </button>
+      </li>
     </ul>
-</nav>
+  </nav>

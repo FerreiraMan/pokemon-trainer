@@ -1,18 +1,21 @@
-<header class="container mx-auto p-4">
-    <h1 class="text-3xl text-white">Welcome, trainer!</h1>
-</header>
-<main class="container mx-auto p-4">
-    <h4 class="text-xl text-white">Your collected pokemons:</h4>
-    <div *ngFor="let pokemon of captureds" class="mb-4">
-        <div class="bg-green-400 p-4 rounded-md relative">
-            <p class="text-gray-800">{{ pokemon.name }}</p>
-            <aside class="material-icons absolute top-0 right-0 text-red-500">catching_pokemon</aside> 
-            <div class="flex justify-center items-center">
-                <div (click)="releasePokemon(pokemon)" class="bg-blue-400 p-2 rounded-md flex items-center cursor-pointer">
-                  <p class="text-white mr-2">Release!</p>
-                  <img alt="My image name" src="./assets/openPokeball.png" class="w-4 h-4">
+<div class="bg-image">
+    <div class="flex flex-col items-center justify-center h-screen">
+        <header class="container mx-auto p-4">
+          <h1 class="text-3xl text-orange-200 text-center">Gotta catch' em all!</h1>
+        </header>
+        <main class="container mx-auto p-4 max-w-md">
+          <h4 class="text-xl text-orange-200 flex justify-center items-center">Pokedex</h4>
+          <div *ngFor="let pokemon of captureds" class="mb-4">
+            <div class="bg-sky-900 text-orange-200 p-4 rounded-md relative opacity-90">
+              <p class="bg-sky-900 flex justify-center items-center">{{ pokemon.name }}</p>
+              <aside class="material-icons absolute top-0 right-0 text-red-500 m-2">catching_pokemon</aside>
+              <div class="flex justify-center items-center">
+                <div (click)="releasePokemon(pokemon)" class="p-2 rounded-md flex items-center cursor-pointer">
+                  <img alt="My image name" src="https://cdn-icons-png.flaticon.com/512/188/188917.png" class="w-4 h-4" alt="Release">
                 </div>
               </div>
-        </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
-</main>
